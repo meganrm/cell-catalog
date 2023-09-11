@@ -2,7 +2,7 @@
 gene_symbol:
   - PXN
 gene_name: paxillin
-protein: papillon
+protein: paxillin
 structure: "maxtrix adhesions "
 isoforms:
   - gene_name: PXN

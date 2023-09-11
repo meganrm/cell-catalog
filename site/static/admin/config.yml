@@ -32,7 +32,7 @@ collections: # A list of collections the CMS should be able to edit
                 widget: "relation",
                 collection: "gene",
                 search_fields: ["gene_symbol", "gene_name", "protein", "structure"],
-                value_field: "name",
+                value_field: "gene_name",
                 display_fields: ["gene_symbol", "gene_name", "protein"],
             }
           - {
