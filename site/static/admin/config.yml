@@ -408,7 +408,6 @@ collections: # A list of collections the CMS should be able to edit
                 name: "gene_symbol",
                 widget: "list",
                 required: true,
-                field: string,
             }
           - {
                 label: "Gene Name",
