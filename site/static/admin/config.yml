@@ -26,6 +26,14 @@ collections: # A list of collections the CMS should be able to edit
                 required: true,
             }
           - {
+                label: "Gene",
+                name: "gene",
+                widget: "relation",
+                collection: "gene",
+                searchFields: ["gene_symbol", "gene_name", "protein"],
+                valueField: "gene_symbol",
+            }
+          - {
                 label: "Allele Count",
                 name: "alleleCount",
                 widget: "select",
@@ -43,37 +51,6 @@ collections: # A list of collections the CMS should be able to edit
                 label: "Data available",
                 name: "data_available",
                 widget: "boolean",
-                required: true,
-            }
-          - {
-                label: "Gene Symbol",
-                name: "gene_symbol",
-                widget: "list",
-                required: true,
-            }
-          - {
-                label: "Gene Name",
-                name: "gene_name",
-                widget: "string",
-                required: true,
-            }
-          - {
-                label: "Protein",
-                name: "protein",
-                widget: "string",
-                required: true,
-            }
-          - label: "Isoforms"
-            name: "isoforms"
-            widget: "list"
-            required: true
-            fields:
-                - { label: "Gene name", name: "gene_name", widget: "string" }
-                - { label: "Isoforms", name: "isoforms", widget: "list" }
-          - {
-                label: "Structure",
-                name: "structure",
-                widget: "string",
                 required: true,
             }
           - {
@@ -395,6 +372,42 @@ collections: # A list of collections the CMS should be able to edit
                       name: "offtargets_link",
                       widget: "file",
                   }
+    - name: "gene"
+      label: "Gene and structures names"
+      folder: "site/content/gene-names" # The path to the folder where the documents are stored
+      create: true # Allow users to create new documents in this collection
+      fields: # The fields each document in this collection have
+          - {
+                label: "Gene Symbol",
+                name: "gene_symbol",
+                widget: "list",
+                required: true,
+            }
+          - {
+                label: "Gene Name",
+                name: "gene_name",
+                widget: "string",
+                required: true,
+            }
+          - {
+                label: "Protein",
+                name: "protein",
+                widget: "string",
+                required: true,
+            }
+          - {
+                label: "Structure",
+                name: "structure",
+                widget: "string",
+                required: true,
+            }
+          - label: "Isoforms"
+            name: "isoforms"
+            widget: "list"
+            required: true
+            fields:
+                - { label: "Gene name", name: "gene_name", widget: "string" }
+                - { label: "Isoforms", name: "isoforms", widget: "list" }
     - name: "pages"
       label: "Pages"
       files:
