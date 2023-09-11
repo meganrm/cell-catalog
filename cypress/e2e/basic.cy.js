@@ -19,16 +19,9 @@ describe("empty spec", () => {
     cy.get("h1").contains(/Values/i);
   });
 
-  it("navigates to the blog page", () => {
-    cy.get('a[href="/post"]').eq(0).click();
-    cy.url().should("include", "/post");
-    cy.get("h1").contains(/Latest Stories/i);
-  });
-});
-
-describe("validate blog", () => {
-  it("should have only 3 blog posts by default", () => {
-    cy.visit("/post");
-    cy.get("ul#blog-list li").should("have.length", 3);
+  it("navigates to the cell-line page", () => {
+    cy.get('a[href="/cell-line"]').eq(0).click();
+    cy.url().should("include", "/cell-line");
+    cy.get("h1").contains(/Cell Lines/i);
   });
 });
