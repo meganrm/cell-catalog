@@ -144,49 +144,257 @@ collections: # A list of collections the CMS should be able to edit
                 - { label: "Caption", name: "caption", widget: "string" }
                 - { label: "link", name: "link", widget: "string" }
             required: false
-          - {
-                label: "Editing Design",
-                name: "editing_design",
-                widget: "object",
-                required: true,
-            }
-          - {
-                label: "Genomic Characterization",
-                name: "genomic_characterization",
-                widget: "object",
-                required: true,
-            }
-          - {
-                label: "Validation",
-                name: "validation",
-                widget: "object",
-                required: true,
-            }
-          - {
-                label: "Stem Cell Characterization",
-                name: "stem_cell_characterization",
-                widget: "object",
-                required: true,
-            }
-          - {
-                label: "Protocols",
-                name: "protocols",
-                widget: "object",
-                required: true,
-            }
+          - label: "Editing Design"
+            name: "editing_design"
+            widget: "object"
+            required: true
+            fields:
+                - {
+                      label: "crRNA Sequence",
+                      name: "crRNA_seq",
+                      widget: "string",
+                  }
+                - {
+                      label: "cas9",
+                      name: "cas9",
+                      widget: "string",
+                      default: "Wildtype spCas9",
+                  }
+                - {
+                      label: "NCBI Isoform",
+                      name: "NCBI_isoform",
+                      widget: "string",
+                  }
+                - { label: "Gene Figure", name: "gene_figure", widget: "image" }
+                - {
+                      label: "Gene Figure Caption",
+                      name: "gene_figure_caption",
+                      widget: "string",
+                  }
+
+          - label: "Genomic Characterization"
+            name: "genomic_characterization"
+            widget: "object"
+            required: true
+            fields:
+                - {
+                      label: "Junction schematic",
+                      name: "junction_schematic",
+                      widget: "image",
+                  }
+                - {
+                      label: "Tagged allele gel",
+                      name: "tagged_allele_gel",
+                      widget: "image",
+                  }
+                - {
+                      label: "Tagged allele gel caption",
+                      name: "tagged_allele_gel_caption",
+                      widget: "string",
+                  }
+                - label: "Junction table"
+                  name: "junction_table"
+                  widget: "list"
+                  fields:
+                      - {
+                            label: "Edited gene",
+                            name: "editedGene",
+                            widget: "string",
+                        }
+                      - {
+                            label: "Junction",
+                            name: "junction",
+                            widget: "string",
+                        }
+                      - {
+                            label: "Expected size",
+                            name: "expected_size",
+                            widget: "string",
+                        }
+                      - {
+                            label: "Confirmed sequence",
+                            name: "confirmed_sequence",
+                            widget: "boolean",
+                        }
+                - {
+                      label: "Junction table caption",
+                      name: "junction_table_caption",
+                      widget: "string",
+                  }
+                - label: "ddpcr"
+                  name: "ddpcr"
+                  widget: "list"
+                  fields:
+                      - {
+                            label: "Gene tag",
+                            name: "gene_tag",
+                            widget: "string",
+                        }
+                      - { label: "Clone", name: "clone", widget: "string" }
+                      - {
+                            label: "fp ratio",
+                            name: "fp_ratio",
+                            widget: "string",
+                        }
+                      - { label: "Plasmid", name: "plasmid", widget: "string" }
+                - {
+                      label: "ddpcr caption",
+                      name: "ddpcr_caption",
+                      widget: "string",
+                  }
+                - {
+                      label: "Off targets",
+                      name: "off_targets",
+                      widget: "string",
+                  }
+                - {
+                      label: "Off targets caption",
+                      name: "off_targets_caption",
+                      widget: "string",
+                  }
+
+          - label: "Validation"
+            name: "validation"
+            widget: "object"
+            required: true
+            fields:
+                - {
+                      label: "Western blot",
+                      name: "western_blot",
+                      widget: "image",
+                  }
+                - {
+                      label: "Immunofluorescence",
+                      name: "immunofluorescence",
+                      widget: "image",
+                  }
+
+          - label: "Stem Cell Characterization"
+            name: "stem_cell_characterization"
+            widget: "object"
+            required: true
+            fields:
+                - label: "Pluripotency analysis"
+                  name: "pluripotency_analysis"
+                  widget: "list"
+                  fields:
+                      - { label: "Marker", name: "marker", widget: "string" }
+                      - {
+                            label: "Positive cells",
+                            name: "positive_cells",
+                            widget: "number",
+                        }
+
+                - {
+                      label: "Pluripotency analysis caption",
+                      name: "pluripotency_analysis_caption",
+                      widget: "string",
+                  }
+                - { label: "Karyotype", name: "karyotype", widget: "image" }
+                - {
+                      label: "Karyotype caption",
+                      name: "karyotype_caption",
+                      widget: "string",
+                  }
+                - label: "Trilineage"
+                  name: "trilineage"
+                  widget: "list"
+                  fields:
+                      - {
+                            label: "Germ layer",
+                            name: "germ_layer",
+                            widget: "string",
+                        }
+                      - { label: "Marker", name: "marker", widget: "string" }
+                      - {
+                            label: "Percent positive cells",
+                            name: "percent_positive_cells",
+                            widget: "number",
+                        }
+                - {
+                      label: "Trilineage caption",
+                      name: "trilineage_caption",
+                      widget: "string",
+                  }
+                - label: "Differentiation"
+                  name: "differentiation"
+                  widget: "list"
+                  fields:
+                      - {
+                            label: "Troponin percent positive",
+                            name: "troponin_percent_positive",
+                            widget: "string",
+                        }
+                      - {
+                            label: "Day of beating percent",
+                            name: "day_of_beating_percent",
+                            widget: "string",
+                        }
+                      - {
+                            label: "Day of beating range",
+                            name: "day_of_beating_range",
+                            widget: "string",
+                        }
+                - {
+                      label: "Differentiation caption",
+                      name: "differentiation_caption",
+                      widget: "string",
+                  }
+                - {
+                      label: "rnaseq figure",
+                      name: "rnaseq_fig",
+                      widget: "image",
+                  }
+                - {
+                      label: "rnaseq figure caption",
+                      name: "rnaseq_fig_caption",
+                      widget: "string",
+                  }
+          - label: "Protocols"
+            name: "protocols"
+            widget: "object"
+            required: true
+            fields:
+                - { label: "culturing", name: "culturing", widget: "file" }
+                - {
+                      label: "transfection",
+                      name: "transfection",
+                      widget: "file",
+                  }
+                - { label: "imaging", name: "imaging", widget: "file" }
+                - { label: "ddpcr", name: "ddpcr", widget: "file" }
+                - { label: "cardio diff", name: "cardio_diff", widget: "file" }
+                - { label: "banking", name: "banking", widget: "file" }
           - {
                 label: "STR analysis",
                 name: "STR_analysis",
                 widget: "string",
                 required: true,
             }
-          - {
-                label: "Supplementary Acknowledgements",
-                name: "Supplementary_acknowledgements",
-                widget: "file",
-                required: true,
-            }
-
+          - label: "Supplementary"
+            name: "supplementary"
+            widget: "object"
+            fields:
+                - {
+                      label: "cell culture link",
+                      name: "cell_culture_link",
+                      widget: "file",
+                  }
+                - {
+                      label: "Acknowledgements",
+                      name: "acknowledgements",
+                      widget: "file",
+                  }
+                - {
+                      label: "Primers link",
+                      name: "primers_link",
+                      widget: "file",
+                  }
+                - {
+                      label: "offtargets link",
+                      name: "offtargets_link",
+                      widget: "file",
+                  }
     - name: "pages"
       label: "Pages"
       files:
