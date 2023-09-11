@@ -31,8 +31,9 @@ collections: # A list of collections the CMS should be able to edit
                 name: "gene",
                 widget: "relation",
                 collection: "gene",
-                searchFields: ["name", "gene_symbol", "gene_name", "protein"],
-                valueField: "name",
+                search_fields: ["gene_symbol", "gene_name", "protein", "structure"],
+                value_field: "name",
+                display_fields: ["gene_symbol", "gene_name", "protein"],
             }
           - {
                 label: "Allele Count",
