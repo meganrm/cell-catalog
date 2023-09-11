@@ -25,7 +25,7 @@ collections: # A list of collections the CMS should be able to edit
                 valueType: int,
                 required: true,
             }
-          - { label: "Parent line", name: "parent_line", widget: "string" }
+          - { label: "Parent line", name: "parent_line", widget: "string", default: "WTC" }
           - {
                 label: "Gene",
                 name: "gene",
@@ -33,7 +33,7 @@ collections: # A list of collections the CMS should be able to edit
                 collection: "gene",
                 search_fields: ["gene_symbol", "gene_name", "protein", "structure"],
                 value_field: "gene_name",
-                display_fields: ["gene_symbol", "gene_name", "protein"],
+                display_fields: ["gene_symbol", "protein", "structure"],
             }
           - {
                 label: "Allele Count",
@@ -166,16 +166,19 @@ collections: # A list of collections the CMS should be able to edit
                       label: "Junction schematic",
                       name: "junction_schematic",
                       widget: "image",
+                      required: false,
                   }
                 - {
                       label: "Tagged allele gel",
                       name: "tagged_allele_gel",
                       widget: "image",
+                      required: false,
                   }
                 - {
                       label: "Tagged allele gel caption",
                       name: "tagged_allele_gel_caption",
                       widget: "string",
+                      required: false,
                   }
                 - label: "Junction table"
                   name: "junction_table"
@@ -194,7 +197,7 @@ collections: # A list of collections the CMS should be able to edit
                       - {
                             label: "Expected size",
                             name: "expected_size",
-                            widget: "string",
+                            widget: "number",
                         }
                       - {
                             label: "Confirmed sequence",
@@ -287,6 +290,7 @@ collections: # A list of collections the CMS should be able to edit
                             label: "Positive cells",
                             name: "positive_cells",
                             widget: "number",
+                            value_type: "float"
                         }
 
                 - {
@@ -314,6 +318,7 @@ collections: # A list of collections the CMS should be able to edit
                             label: "Percent positive cells",
                             name: "percent_positive_cells",
                             widget: "number",
+                            value_type: "float",
                         }
                 - {
                       label: "Trilineage caption",
@@ -372,7 +377,7 @@ collections: # A list of collections the CMS should be able to edit
           - {
                 label: "STR analysis",
                 name: "STR_analysis",
-                widget: "string",
+                widget: "file",
                 required: true,
             }
           - label: "Supplementary"
