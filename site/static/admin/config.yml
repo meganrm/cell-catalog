@@ -25,12 +25,13 @@ collections: # A list of collections the CMS should be able to edit
                 valueType: int,
                 required: true,
             }
+          - { label: "Parent line", name: "parent_line", widget: "string" }
           - {
                 label: "Gene",
                 name: "gene",
                 widget: "relation",
                 collection: "gene",
-                searchFields: ["gene_symbol", "gene_name", "protein"],
+                searchFields: ["name", "gene_symbol", "gene_name", "protein"],
                 valueField: "gene_symbol",
             }
           - {
@@ -93,7 +94,13 @@ collections: # A list of collections the CMS should be able to edit
                 widget: "string",
                 required: true,
             }
-          - { label: "Cofa", name: "cofa", widget: "string", required: true }
+          - { label: "Cofa", name: "cofa", widget: "string" }
+          - {
+                label: "Parental order link",
+                name: "parental_order_link",
+                widget: "string",
+                required: true,
+            }
           - {
                 label: "Donor Plasmid",
                 name: "donor_plasmid",
@@ -219,11 +226,14 @@ collections: # A list of collections the CMS should be able to edit
                       name: "ddpcr_caption",
                       widget: "string",
                   }
-                - {
-                      label: "Off targets",
-                      name: "off_targets",
-                      widget: "string",
-                  }
+                - label: "Off targets"
+                  name: "off_targets"
+                  widget: "list"
+                  fields:
+                    - { label: "Clones analyzed", name: "clones_analyzed", widget: "number"}
+                    - { label: "Off-targets sequenced", name: "off_targets_sequenced", widget: "number"}
+                    - { label: "Sites sequenced", name: "sites_sequenced", widget: "number"}
+                    - { label: "Mutations identified", name: "mutations_identified", widget: "number"}
                 - {
                       label: "Off targets caption",
                       name: "off_targets_caption",
@@ -382,11 +392,18 @@ collections: # A list of collections the CMS should be able to edit
                 name: "gene_symbol",
                 widget: "list",
                 required: true,
+                field: string,
             }
           - {
                 label: "Gene Name",
                 name: "gene_name",
                 widget: "string",
+                required: true,
+            }
+          - {
+                label: "Gene id",
+                name: "gene_id",
+                widget: "list",
                 required: true,
             }
           - {
