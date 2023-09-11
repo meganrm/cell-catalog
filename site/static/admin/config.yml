@@ -31,7 +31,7 @@ collections: # A list of collections the CMS should be able to edit
                 name: "gene",
                 widget: "relation",
                 collection: "gene",
-                searchFields: ["gene_symbol", "gene_name", "protein"],
+                searchFields: ["name", "gene_symbol", "gene_name", "protein"],
                 valueField: "gene_symbol",
             }
           - {
