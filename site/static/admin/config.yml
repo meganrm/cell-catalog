@@ -11,51 +11,181 @@ collections: # A list of collections the CMS should be able to edit
       folder: "site/content/cell-line" # The path to the folder where the documents are stored
       create: true # Allow users to create new documents in this collection
       fields: # The fields each document in this collection have
-          - { label: "ID", name: "cell_line_id", widget: "string", required: true }
+          - {
+                label: "ID",
+                name: "cell_line_id",
+                widget: "string",
+                required: true,
+            }
           - { label: "Publish Date", name: "date", widget: "datetime" }
-          - { label: "Clone Number", name: "clone_number", widget: "number", valueType: int, required: true } 
-          - { label: "Allele Count", name: "alleleCount", widget: "select", options: ["mono", "bi"], required: false }
-          - { label: "Status", name: "status", widget: "select", options: ["in progress", "done"], required: true }
-          - { label: "Data available", name: "data_available", widget: "boolean", required: true }
-          - { label: "Gene Symbol", name: "gene_symbol", widget: "list", required: true }
-          - { label: "Gene Name", name: "gene_name", widget: "string", required: true }
-          - { label: "Protein", name: "protein", widget: "string", required: true }
-          - { 
-                label: "Isoforms", 
-                name: "isoforms", 
-                widget: "list",  
-                fields: 
-                    - {label: "Gene name", name: "gene_name", widget: string}, 
-                    - {label: "Isoforms", name: "isoforms", widget: list}, 
-                required: true }
-          - { label: "Structure", name: "structure", widget: "string", required: true }
-          - { label: "Terminal Tagged", name: "terminal_tagged", widget: "select", options: ["C-terminus", "N-terminus", "C-terminus / N-terminus",  "C-terminus / C-terminus / N-terminus"], required: true }
-          - { label: "Fluorescent Tag", name: "fluorescent_tag", widget: "select", options: ["mEGFP", "EGFP", "mTagRFP-T", "mEGFP / mTagRFP-T", "TagBFP", "mEGFP / mTagRFP-T / HaloTag"], required: true }
-          - { label: "Linker", name: "linker", widget: "string", required: true }
-          - { label: "Order Link", name: "order_link", widget: "string", required: true }
+          - {
+                label: "Clone Number",
+                name: "clone_number",
+                widget: "number",
+                valueType: int,
+                required: true,
+            }
+          - {
+                label: "Allele Count",
+                name: "alleleCount",
+                widget: "select",
+                options: ["mono", "bi"],
+                required: false,
+            }
+          - {
+                label: "Status",
+                name: "status",
+                widget: "select",
+                options: ["in progress", "done"],
+                required: true,
+            }
+          - {
+                label: "Data available",
+                name: "data_available",
+                widget: "boolean",
+                required: true,
+            }
+          - {
+                label: "Gene Symbol",
+                name: "gene_symbol",
+                widget: "list",
+                required: true,
+            }
+          - {
+                label: "Gene Name",
+                name: "gene_name",
+                widget: "string",
+                required: true,
+            }
+          - {
+                label: "Protein",
+                name: "protein",
+                widget: "string",
+                required: true,
+            }
+          - label: "Isoforms"
+            name: "isoforms"
+            widget: "list"
+            required: true
+            fields:
+                - { label: "Gene name", name: "gene_name", widget: "string" }
+                - { label: "Isoforms", name: "isoforms", widget: "list" }
+          - {
+                label: "Structure",
+                name: "structure",
+                widget: "string",
+                required: true,
+            }
+          - {
+                label: "Terminal Tagged",
+                name: "terminal_tagged",
+                widget: "select",
+                options:
+                    [
+                        "C-terminus",
+                        "N-terminus",
+                        "C-terminus / N-terminus",
+                        "C-terminus / C-terminus / N-terminus",
+                    ],
+                required: true,
+            }
+          - {
+                label: "Fluorescent Tag",
+                name: "fluorescent_tag",
+                widget: "select",
+                options:
+                    [
+                        "mEGFP",
+                        "EGFP",
+                        "mTagRFP-T",
+                        "mEGFP / mTagRFP-T",
+                        "TagBFP",
+                        "mEGFP / mTagRFP-T / HaloTag",
+                    ],
+                required: true,
+            }
+          - {
+                label: "Linker",
+                name: "linker",
+                widget: "string",
+                required: true,
+            }
+          - {
+                label: "Order Link",
+                name: "order_link",
+                widget: "string",
+                required: true,
+            }
           - { label: "Cofa", name: "cofa", widget: "string", required: true }
-          - { label: "Donor Plasmid", name: "donor_plasmid", widget: "string", required: true }
-          - { label: "Eu HPSC Reg", name: "eu_hpsc_reg", widget: "string", required: false }
-          - { 
-                label: "Media", 
-                name: "media", 
-                widget: "list", 
-                fields: 
-                    - {label: "Type", name: "type", widget: "select", options: ["movie", "image"]}, 
-                    - {label: "Data Type", name: "data_type", widget: string},      
-                    - {label: "File Name", name: "file_name", widget: string},                
-                    - {label: "Caption", name: "caption", widget: string},                
-                    - {label: "link", name: "link", widget: string},                
-
-                required: false }
-          - { label: "Editing Design", name: "editing_design", widget: "object", required: true }
-          - { label: "Genomic Characterization", name: "genomic_characterization", widget: "object", required: true }
-          - { label: "Validation", name: "validation", widget: "object", required: true }
-          - { label: "Stem Cell Characterization", name: "stem_cell_characterization", widget: "object", required: true }
-          - { label: "Protocols", name: "protocols", widget: "object", required: true }
-          - { label: "STR analysis", name: "STR_analysis", widget: "string", required: true }
-          - { label: "Supplementary Acknowledgements", name: "Supplementary_acknowledgements", widget: "file", required: true }
-
+          - {
+                label: "Donor Plasmid",
+                name: "donor_plasmid",
+                widget: "string",
+                required: true,
+            }
+          - {
+                label: "Eu HPSC Reg",
+                name: "eu_hpsc_reg",
+                widget: "string",
+                required: false,
+            }
+          - label: "Media"
+            name: "media"
+            widget: "list"
+            fields:
+                - {
+                      label: "Type",
+                      name: "type",
+                      widget: "select",
+                      options: ["movie", "image"],
+                  }
+                - { label: "Data Type", name: "data_type", widget: "string" }
+                - { label: "File Name", name: "file_name", widget: "string" }
+                - { label: "Caption", name: "caption", widget: "string" }
+                - { label: "link", name: "link", widget: "string" }
+            required: false
+          - {
+                label: "Editing Design",
+                name: "editing_design",
+                widget: "object",
+                required: true,
+            }
+          - {
+                label: "Genomic Characterization",
+                name: "genomic_characterization",
+                widget: "object",
+                required: true,
+            }
+          - {
+                label: "Validation",
+                name: "validation",
+                widget: "object",
+                required: true,
+            }
+          - {
+                label: "Stem Cell Characterization",
+                name: "stem_cell_characterization",
+                widget: "object",
+                required: true,
+            }
+          - {
+                label: "Protocols",
+                name: "protocols",
+                widget: "object",
+                required: true,
+            }
+          - {
+                label: "STR analysis",
+                name: "STR_analysis",
+                widget: "string",
+                required: true,
+            }
+          - {
+                label: "Supplementary Acknowledgements",
+                name: "Supplementary_acknowledgements",
+                widget: "file",
+                required: true,
+            }
 
     - name: "pages"
       label: "Pages"
