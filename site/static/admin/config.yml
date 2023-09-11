@@ -31,7 +31,7 @@ collections: # A list of collections the CMS should be able to edit
                 name: "gene",
                 widget: "relation",
                 collection: "gene",
-                searchFields: ["name", "gene_symbol", "gene_name", "protein"],
+                searchFields: ["gene_symbol", "gene_name", "protein"],
                 valueField: "gene_symbol",
             }
           - {
@@ -230,10 +230,26 @@ collections: # A list of collections the CMS should be able to edit
                   name: "off_targets"
                   widget: "list"
                   fields:
-                    - { label: "Clones analyzed", name: "clones_analyzed", widget: "number"}
-                    - { label: "Off-targets sequenced", name: "off_targets_sequenced", widget: "number"}
-                    - { label: "Sites sequenced", name: "sites_sequenced", widget: "number"}
-                    - { label: "Mutations identified", name: "mutations_identified", widget: "number"}
+                      - {
+                            label: "Clones analyzed",
+                            name: "clones_analyzed",
+                            widget: "number",
+                        }
+                      - {
+                            label: "Off-targets sequenced",
+                            name: "off_targets_sequenced",
+                            widget: "number",
+                        }
+                      - {
+                            label: "Sites sequenced",
+                            name: "sites_sequenced",
+                            widget: "number",
+                        }
+                      - {
+                            label: "Mutations identified",
+                            name: "mutations_identified",
+                            widget: "number",
+                        }
                 - {
                       label: "Off targets caption",
                       name: "off_targets_caption",
