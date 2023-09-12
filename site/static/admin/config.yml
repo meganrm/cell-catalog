@@ -389,32 +389,27 @@ collections: # A list of collections the CMS should be able to edit
                   name: "transfection"
                   widget: "file"
                   required: false
-                  media_library:
-                      media_folder: "/pdfs"
+                  media_folder: "/pdfs"
                 - label: "imaging"
                   name: "imaging"
                   widget: "file"
                   required: false
-                  media_library:
-                      media_folder: "/pdfs"
+                  media_folder: "/pdfs"
                 - label: "ddpcr"
                   name: "ddpcr"
                   widget: "file"
                   required: false
-                  media_library:
-                      media_folder: "/pdfs"
+                  media_folder: "/pdfs"
                 - label: "cardio diff"
                   name: "cardio_diff"
                   widget: "file"
                   required: false
-                  media_library:
-                      media_folder: "/pdfs"
+                  media_folder: "/pdfs"
                 - label: "banking"
                   name: "banking"
                   widget: "file"
                   required: false
-                  media_library:
-                      media_folder: "/pdfs"
+                  media_folder: "/pdfs"
           - label: "STR analysis"
             name: "STR_analysis"
             widget: "file"
