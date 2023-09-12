@@ -140,7 +140,7 @@ collections: # A list of collections the CMS should be able to edit
           - label: "Editing Design"
             name: "editing_design"
             widget: "object"
-            required: false,
+            required: false
             fields:
                 - {
                       label: "crRNA Sequence",
@@ -168,7 +168,7 @@ collections: # A list of collections the CMS should be able to edit
           - label: "Genomic Characterization"
             name: "genomic_characterization"
             widget: "object"
-            required: false,
+            required: false
             fields:
                 - {
                       label: "Junction schematic",
@@ -271,7 +271,7 @@ collections: # A list of collections the CMS should be able to edit
           - label: "Validation"
             name: "validation"
             widget: "object"
-            required: false,
+            required: false
             fields:
                 - {
                       label: "Western blot",
@@ -289,7 +289,7 @@ collections: # A list of collections the CMS should be able to edit
           - label: "Stem Cell Characterization"
             name: "stem_cell_characterization"
             widget: "object"
-            required: false,
+            required: false
             fields:
                 - label: "Pluripotency analysis"
                   name: "pluripotency_analysis"
@@ -372,7 +372,7 @@ collections: # A list of collections the CMS should be able to edit
           - label: "Protocols"
             name: "protocols"
             widget: "object"
-            required: false,
+            required: false
             fields:
                 - { label: "culturing", name: "culturing", widget: "file" }
                 - label: "transfection"
