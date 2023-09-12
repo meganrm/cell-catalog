@@ -10,6 +10,7 @@ collections: # A list of collections the CMS should be able to edit
       label: "Cell Line" # Used in the UI, ie.: "New Cell Line"
       folder: "site/content/cell-line" # The path to the folder where the documents are stored
       create: true # Allow users to create new documents in this collection
+      slug: "{{cell-line-id}}"
       fields: # The fields each document in this collection have
           - {
                 label: "ID",
@@ -25,13 +26,19 @@ collections: # A list of collections the CMS should be able to edit
                 valueType: int,
                 required: true,
             }
-          - { label: "Parent line", name: "parent_line", widget: "string", default: "WTC" }
+          - {
+                label: "Parent line",
+                name: "parent_line",
+                widget: "string",
+                default: "WTC",
+            }
           - {
                 label: "Gene",
                 name: "gene",
                 widget: "relation",
                 collection: "gene",
-                search_fields: ["gene_symbol", "gene_name", "protein", "structure"],
+                search_fields:
+                    ["gene_symbol", "gene_name", "protein", "structure"],
                 value_field: "gene_name",
                 display_fields: ["gene_symbol", "protein", "structure"],
             }
@@ -47,13 +54,14 @@ collections: # A list of collections the CMS should be able to edit
                 name: "status",
                 widget: "select",
                 options: ["in progress", "done"],
+                default: "in progress",
                 required: true,
             }
           - {
                 label: "Data available",
                 name: "data_available",
                 widget: "boolean",
-                required: true,
+                required: false,
             }
           - {
                 label: "Terminal Tagged",
@@ -66,7 +74,7 @@ collections: # A list of collections the CMS should be able to edit
                         "C-terminus / N-terminus",
                         "C-terminus / C-terminus / N-terminus",
                     ],
-                required: true,
+                required: false,
             }
           - {
                 label: "Fluorescent Tag",
@@ -81,32 +89,32 @@ collections: # A list of collections the CMS should be able to edit
                         "TagBFP",
                         "mEGFP / mTagRFP-T / HaloTag",
                     ],
-                required: true,
+                required: false,
             }
           - {
                 label: "Linker",
                 name: "linker",
                 widget: "string",
-                required: true,
+                required: false,
             }
           - {
                 label: "Order Link",
                 name: "order_link",
                 widget: "string",
-                required: true,
+                required: false,
             }
-          - { label: "Cofa", name: "cofa", widget: "string" }
+          - { label: "Cofa", name: "cofa", widget: "string", required: false }
           - {
                 label: "Parental order link",
                 name: "parental_order_link",
                 widget: "string",
-                required: true,
+                required: false,
             }
           - {
                 label: "Donor Plasmid",
                 name: "donor_plasmid",
                 widget: "string",
-                required: true,
+                required: false,
             }
           - {
                 label: "Eu HPSC Reg",
@@ -132,7 +140,7 @@ collections: # A list of collections the CMS should be able to edit
           - label: "Editing Design"
             name: "editing_design"
             widget: "object"
-            required: true
+            required: false,
             fields:
                 - {
                       label: "crRNA Sequence",
@@ -160,7 +168,7 @@ collections: # A list of collections the CMS should be able to edit
           - label: "Genomic Characterization"
             name: "genomic_characterization"
             widget: "object"
-            required: true
+            required: false,
             fields:
                 - {
                       label: "Junction schematic",
@@ -263,23 +271,25 @@ collections: # A list of collections the CMS should be able to edit
           - label: "Validation"
             name: "validation"
             widget: "object"
-            required: true
+            required: false,
             fields:
                 - {
                       label: "Western blot",
                       name: "western_blot",
                       widget: "image",
+                      required: false,
                   }
                 - {
                       label: "Immunofluorescence",
                       name: "immunofluorescence",
                       widget: "image",
+                      required: false,
                   }
 
           - label: "Stem Cell Characterization"
             name: "stem_cell_characterization"
             widget: "object"
-            required: true
+            required: false,
             fields:
                 - label: "Pluripotency analysis"
                   name: "pluripotency_analysis"
@@ -290,7 +300,7 @@ collections: # A list of collections the CMS should be able to edit
                             label: "Positive cells",
                             name: "positive_cells",
                             widget: "number",
-                            value_type: "float"
+                            value_type: "float",
                         }
 
                 - {
@@ -362,7 +372,7 @@ collections: # A list of collections the CMS should be able to edit
           - label: "Protocols"
             name: "protocols"
             widget: "object"
-            required: true
+            required: false,
             fields:
                 - { label: "culturing", name: "culturing", widget: "file" }
                 - {
@@ -382,7 +392,8 @@ collections: # A list of collections the CMS should be able to edit
             }
           - label: "Supplementary"
             name: "supplementary"
-            widget: "object"
+            widget: "object",
+            required: false,
             fields:
                 - {
                       label: "cell culture link",
