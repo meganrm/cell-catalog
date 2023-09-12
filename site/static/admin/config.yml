@@ -133,10 +133,30 @@ collections: # A list of collections the CMS should be able to edit
                       widget: "select",
                       options: ["movie", "image"],
                   }
-                - { label: "Data Type", name: "data_type", widget: "string", required: false  }
-                - { label: "File Name", name: "file_name", widget: "string", required: false  }
-                - { label: "Caption", name: "caption", widget: "string", required: false }
-                - { label: "link", name: "link", widget: "string", required: false  }
+                - {
+                      label: "Data Type",
+                      name: "data_type",
+                      widget: "string",
+                      required: false,
+                  }
+                - {
+                      label: "File Name",
+                      name: "file_name",
+                      widget: "string",
+                      required: false,
+                  }
+                - {
+                      label: "Caption",
+                      name: "caption",
+                      widget: "string",
+                      required: false,
+                  }
+                - {
+                      label: "link",
+                      name: "link",
+                      widget: "string",
+                      required: false,
+                  }
             required: false
           - label: "Editing Design"
             name: "editing_design"
@@ -147,19 +167,28 @@ collections: # A list of collections the CMS should be able to edit
                       label: "crRNA Sequence",
                       name: "crRNA_seq",
                       widget: "string",
+                      required: false,
                   }
                 - {
                       label: "cas9",
                       name: "cas9",
                       widget: "string",
                       default: "Wildtype spCas9",
+                      required: false,
                   }
                 - {
                       label: "NCBI Isoform",
                       name: "NCBI_isoform",
                       widget: "string",
+                      required: false,
                   }
-                - { label: "Gene Figure", name: "gene_figure", widget: "image", media_folder: "images" }
+                - {
+                      label: "Gene Figure",
+                      name: "gene_figure",
+                      widget: "image",
+                      media_folder: "images",
+                      required: false,
+                  }
                 - {
                       label: "Gene Figure Caption",
                       name: "gene_figure_caption",
@@ -184,7 +213,7 @@ collections: # A list of collections the CMS should be able to edit
                       name: "tagged_allele_gel",
                       widget: "image",
                       required: false,
-                      media_folder: "images"
+                      media_folder: "images",
                   }
                 - {
                       label: "Tagged allele gel caption",
@@ -285,14 +314,14 @@ collections: # A list of collections the CMS should be able to edit
                       name: "western_blot",
                       widget: "image",
                       required: false,
-                      media_folder: "images"
+                      media_folder: "images",
                   }
                 - {
                       label: "Immunofluorescence",
                       name: "immunofluorescence",
                       widget: "image",
                       required: false,
-                      media_folder: "images"
+                      media_folder: "images",
                   }
 
           - label: "Stem Cell Characterization"
@@ -318,7 +347,12 @@ collections: # A list of collections the CMS should be able to edit
                       widget: "string",
                       required: false,
                   }
-                - { label: "Karyotype", name: "karyotype", widget: "image", required: false }
+                - {
+                      label: "Karyotype",
+                      name: "karyotype",
+                      widget: "image",
+                      required: false,
+                  }
                 - {
                       label: "Karyotype caption",
                       name: "karyotype_caption",
