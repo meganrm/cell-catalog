@@ -11,6 +11,7 @@ collections: # A list of collections the CMS should be able to edit
       folder: "site/content/cell-line" # The path to the folder where the documents are stored
       create: true # Allow users to create new documents in this collection
       slug: "{{cell-line-id}}"
+      media_folder: "{{cell-line-id}}"
       fields: # The fields each document in this collection have
           - {
                 label: "ID",
@@ -158,7 +159,7 @@ collections: # A list of collections the CMS should be able to edit
                       name: "NCBI_isoform",
                       widget: "string",
                   }
-                - { label: "Gene Figure", name: "gene_figure", widget: "image" }
+                - { label: "Gene Figure", name: "gene_figure", widget: "image", media_folder: "images" }
                 - {
                       label: "Gene Figure Caption",
                       name: "gene_figure_caption",
@@ -176,12 +177,14 @@ collections: # A list of collections the CMS should be able to edit
                       name: "junction_schematic",
                       widget: "image",
                       required: false,
+                      media_folder: "images",
                   }
                 - {
                       label: "Tagged allele gel",
                       name: "tagged_allele_gel",
                       widget: "image",
                       required: false,
+                      media_folder: "images"
                   }
                 - {
                       label: "Tagged allele gel caption",
@@ -282,12 +285,14 @@ collections: # A list of collections the CMS should be able to edit
                       name: "western_blot",
                       widget: "image",
                       required: false,
+                      media_folder: "images"
                   }
                 - {
                       label: "Immunofluorescence",
                       name: "immunofluorescence",
                       widget: "image",
                       required: false,
+                      media_folder: "images"
                   }
 
           - label: "Stem Cell Characterization"
