@@ -10,8 +10,8 @@ collections: # A list of collections the CMS should be able to edit
       label: "Cell Line" # Used in the UI, ie.: "New Cell Line"
       folder: "site/content/cell-line" # The path to the folder where the documents are stored
       create: true # Allow users to create new documents in this collection
-      slug: "{{cell-line-id}}"
-      media_folder: "{{cell-line-id}}"
+      slug: "{{fields.cell-line-id}}"
+      path: "{{fields.cell-line-id}}"
       fields: # The fields each document in this collection have
           - {
                 label: "ID",
