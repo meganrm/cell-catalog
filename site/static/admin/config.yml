@@ -132,10 +132,10 @@ collections: # A list of collections the CMS should be able to edit
                       widget: "select",
                       options: ["movie", "image"],
                   }
-                - { label: "Data Type", name: "data_type", widget: "string" }
-                - { label: "File Name", name: "file_name", widget: "string" }
-                - { label: "Caption", name: "caption", widget: "string" }
-                - { label: "link", name: "link", widget: "string" }
+                - { label: "Data Type", name: "data_type", widget: "string", required: false  }
+                - { label: "File Name", name: "file_name", widget: "string", required: false  }
+                - { label: "Caption", name: "caption", widget: "string", required: false }
+                - { label: "link", name: "link", widget: "string", required: false  }
             required: false
           - label: "Editing Design"
             name: "editing_design"
@@ -163,6 +163,7 @@ collections: # A list of collections the CMS should be able to edit
                       label: "Gene Figure Caption",
                       name: "gene_figure_caption",
                       widget: "string",
+                      required: false,
                   }
 
           - label: "Genomic Characterization"
@@ -216,6 +217,7 @@ collections: # A list of collections the CMS should be able to edit
                       label: "Junction table caption",
                       name: "junction_table_caption",
                       widget: "string",
+                      required: false,
                   }
                 - label: "ddpcr"
                   name: "ddpcr"
@@ -237,6 +239,7 @@ collections: # A list of collections the CMS should be able to edit
                       label: "ddpcr caption",
                       name: "ddpcr_caption",
                       widget: "string",
+                      required: false,
                   }
                 - label: "Off targets"
                   name: "off_targets"
@@ -266,6 +269,7 @@ collections: # A list of collections the CMS should be able to edit
                       label: "Off targets caption",
                       name: "off_targets_caption",
                       widget: "string",
+                      required: false,
                   }
 
           - label: "Validation"
@@ -307,12 +311,14 @@ collections: # A list of collections the CMS should be able to edit
                       label: "Pluripotency analysis caption",
                       name: "pluripotency_analysis_caption",
                       widget: "string",
+                      required: false,
                   }
-                - { label: "Karyotype", name: "karyotype", widget: "image" }
+                - { label: "Karyotype", name: "karyotype", widget: "image", required: false }
                 - {
                       label: "Karyotype caption",
                       name: "karyotype_caption",
                       widget: "string",
+                      required: false,
                   }
                 - label: "Trilineage"
                   name: "trilineage"
@@ -334,6 +340,7 @@ collections: # A list of collections the CMS should be able to edit
                       label: "Trilineage caption",
                       name: "trilineage_caption",
                       widget: "string",
+                      required: false,
                   }
                 - label: "Differentiation"
                   name: "differentiation"
@@ -358,16 +365,19 @@ collections: # A list of collections the CMS should be able to edit
                       label: "Differentiation caption",
                       name: "differentiation_caption",
                       widget: "string",
+                      required: false,
                   }
                 - {
                       label: "rnaseq figure",
                       name: "rnaseq_fig",
                       widget: "image",
+                      required: false,
                   }
                 - {
                       label: "rnaseq figure caption",
                       name: "rnaseq_fig_caption",
                       widget: "string",
+                      required: false,
                   }
           - label: "Protocols"
             name: "protocols"
@@ -418,21 +428,25 @@ collections: # A list of collections the CMS should be able to edit
                       label: "cell culture link",
                       name: "cell_culture_link",
                       widget: "file",
+                      required: false,
                   }
                 - {
                       label: "Acknowledgements",
                       name: "acknowledgements",
                       widget: "file",
+                      required: false,
                   }
                 - {
                       label: "Primers link",
                       name: "primers_link",
                       widget: "file",
+                      required: false,
                   }
                 - {
                       label: "offtargets link",
                       name: "offtargets_link",
                       widget: "file",
+                      required: false,
                   }
     - name: "gene"
       label: "Gene and structures names"
